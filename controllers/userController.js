@@ -13,7 +13,7 @@ const registerUSer = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (!name || !password || !email) {
-      return res.json({ success: false, message: "Missing details 1" });
+      return res.json({ success: false, message: "Missing details" });
     }
 
     //validating email

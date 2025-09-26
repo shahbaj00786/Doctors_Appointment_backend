@@ -8,6 +8,18 @@ import doctorRouter from "./routes/doctorRouter.js";
 import userRouter from "./routes/userRouter.js";
 dotenv.config();
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'https://doctors-appointment-frontend-eta.vercel.app', // frontend URL
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  credentials: true
+}));
+
+// Also handle OPTIONS preflight
+app.options('*', cors());
+
+
 //app config
 const app = express();
 const port = process.env.PORT || 4000;
