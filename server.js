@@ -11,7 +11,7 @@ dotenv.config();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://doctors-appointment-frontend-eta.vercel.app', // frontend URL
+  origin: '*',
   methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   credentials: true
 }));
