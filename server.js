@@ -31,7 +31,7 @@ connectCloudinary();
 app.use("/api/admin", adminRouter);
 app.use('/api/doctor', doctorRouter)
 app.use("/api/user", userRouter)
-app.use('/', console.log("working fine"))
+
 
 app.listen(port, () => {
   console.log("server started", port);
