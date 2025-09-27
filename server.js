@@ -22,7 +22,9 @@ app.use(cors({
 
 
 //middlewares
+app.options("*", cors());
 app.use(express.json());
+
 
 connectDB();
 connectCloudinary();
