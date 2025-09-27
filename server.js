@@ -26,8 +26,12 @@ app.options("*", cors());
 app.use(express.json());
 
 
-connectDB();
-connectCloudinary();
+try {
+  await connectDB();
+  await connectCloudinary();
+} catch (err) {
+  console.error("Init error:", err);
+}
 
 //api endpoints
 app.use("/api/admin", adminRouter);
