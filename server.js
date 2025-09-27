@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 
 app.use(cors({
   origin: [
-    "https://doctors-appointment-frontend-mu.vercel.app", 
+    "http://localhost:4000 ", 
   ],
   credentials: true
 }));
