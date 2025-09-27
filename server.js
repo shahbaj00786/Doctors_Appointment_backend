@@ -35,7 +35,9 @@ app.use('/api/doctor', doctorRouter)
 app.use("/api/user", userRouter)
 
 
-app.listen(port, () => {
-  console.log("server started", port);
+app.get("/api/test", (req, res) => {
+  res.json({ success: true, message: "Backend working fine 🚀" });
 });
+
+module.exports = app;
 
