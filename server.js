@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 
 app.use(cors({
   origin: [
-    "http://localhost:4000 ", 
+    "http://localhost:5174", 
   ],
   credentials: true
 }));
@@ -22,7 +22,7 @@ app.use(cors({
 
 
 //middlewares
-app.options("*", cors());
+
 app.use(express.json());
 
 
@@ -33,15 +33,19 @@ try {
   console.error("Init error:", err);
 }
 
+app.get("/", (req, res) => {
+  res.send("Backend running...");
+});
+
 //api endpoints
 app.use("/api/admin", adminRouter);
 app.use('/api/doctor', doctorRouter)
 app.use("/api/user", userRouter)
 
 
-app.get("/api/test", (req, res) => {
-  res.json({ success: true, message: "Backend working fine 🚀" });
+app.listen(port, () => {
+  console.log("server started", port);
 });
 
-module.exports = app;
+
 
